@@ -12,6 +12,6 @@ public class Greetings {
 	@Path("/hello")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String sayHello() {
-		return "moi taas";
+		return "mun perse";
 	}
 }
