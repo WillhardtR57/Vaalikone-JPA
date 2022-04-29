@@ -41,4 +41,20 @@ public class CandidatesRest {
 			e.printStackTrace();
 		}
 	}
+	
+	@GET
+	@Path("/candidatepicker")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void readPicker() {
+		List<Candidates> list = new ArrayList<Candidates>();
+		Dao dao = new Dao();
+		list = dao.readCandidates();
+		request.setAttribute("candidateslist", list);
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/candidatepicker.jsp");
+		try {
+			rd.forward(request, response);
+		} catch (ServletException | IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

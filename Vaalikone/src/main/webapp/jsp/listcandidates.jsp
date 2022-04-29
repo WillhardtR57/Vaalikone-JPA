@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
  <%@ page import="java.util.ArrayList" %>   
- <%@ page import="data.*" %> 
+ <%@ page import="data.Candidates" %> 
  <%@ page import="dao.Dao" %>
  
  
@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>Vaalikone - All Candidates</title>
 </head>
 <body>
@@ -35,6 +35,6 @@ ${candidate.mita_asioita_haluat_edistaa}<br>
 
 </c:forEach>
 
-<%@ include file="../footer.html" %>
+<p>Authors: Tuukka Kotilainen & Willhardt Räsänen</p>
 </body>
 </html>
