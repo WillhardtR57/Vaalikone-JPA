@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
-@Entity
+@Entity(name = "ehdokkaat")
 public class Candidates {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

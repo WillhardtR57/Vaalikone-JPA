@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ page import="java.util.ArrayList" %>   
  <%@ page import="data.*" %> 
@@ -10,14 +10,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Vaalikone - All Candidates</title>
 </head>
 <body>
 
 
-
-<c:forEach var="candidate" items="${sessionScope.candidateslist}" >
+<c:import url="../navbar.html" charEncoding="UTF-8"/>
+<c:forEach var="candidate" items="${requestScope.candidateslist}" >
 <p><b>${candidate.ehdokas_id}:</b> ${candidate.etunimi} ${candidate.sukunimi} </p>
 <b>Party: </b><br>
 ${candidate.puolue} <br>
@@ -35,5 +35,6 @@ ${candidate.mita_asioita_haluat_edistaa}<br>
 
 </c:forEach>
 
+<%@ include file="../footer.html" %>
 </body>
 </html>
