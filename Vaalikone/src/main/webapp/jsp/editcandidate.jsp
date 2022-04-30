@@ -16,7 +16,7 @@
 <h1>Editing candidate</h1>
 
 <br>
-<form action='/editcandidate' method='post' accept-charset="UTF-8">
+<form action='/rest/candidatesrest/editcandidates' method='post' accept-charset="UTF-8">
 
 <b>Candidate number</b>
 <input type="text" name='ehdokas_id' value='${requestScope.candidate.ehdokas_id}'> <br>

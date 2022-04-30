@@ -24,6 +24,19 @@ public class Candidates {
 		
 	}
 	
+	public Candidates(int ehdokas_id, String sukunimi, String etunimi, String puolue, String kotipaikkakunta,
+			int ika, String miksi_eduskuntaan, String mita_asioita_haluat_edistaa, String ammatti) {
+		this.ehdokas_id = ehdokas_id;
+		this.sukunimi = sukunimi;
+		this.etunimi = etunimi;
+		this.puolue = puolue;
+		this.kotipaikkakunta = kotipaikkakunta;
+		this.ika = ika;
+		this.miksi_eduskuntaan = miksi_eduskuntaan;
+		this.mita_asioita_haluat_edistaa = mita_asioita_haluat_edistaa;
+		this.ammatti = ammatti;
+	}
+
 	public int getEhdokas_id() {
 		return ehdokas_id;
 	}

@@ -50,5 +50,14 @@ public class Dao {
 		em.getTransaction().commit();
 		return null;
 	}
+	
+	public Candidates getCandidateId(int id) {
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		Candidates c = em.find(Candidates.class, id);
+		em.getTransaction().commit();
+		em.close();
+		return c;
+	}
 
 }

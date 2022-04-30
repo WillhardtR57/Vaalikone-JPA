@@ -18,7 +18,7 @@
 <h1>Add candidate</h1>
 
 <br>
-<form action='/addcandidate' method='post'>
+<form action='/rest/candidatesrest/addcandidate' method='post'>
 
 <b>Candidate number</b>
 <input type="text" name='ehdokas_id'>
