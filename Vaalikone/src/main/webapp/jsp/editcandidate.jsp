@@ -16,6 +16,7 @@
 <h1>Editing candidate</h1>
 
 <br>
+
 <form action='/rest/candidatesrest/editcandidates' method='post' accept-charset="UTF-8">
 
 <b>Candidate number</b>

@@ -21,8 +21,8 @@ String password = (String)request.getAttribute("password");
 %>
 <%
 if(data.LoginData.CheckPasswords(password)==true && userProvidedUsername.equals(username)){
-	response.sendRedirect("/jsp/adminPage.jsp");
-} else {
+	response.sendRedirect("/jsp/adminpage.jsp");
+} else if(password==null || userProvidedUsername==null){
 	
 %>
 <div id="loginFailure">Username or password is incorrect! XD</div>

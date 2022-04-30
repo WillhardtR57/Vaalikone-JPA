@@ -63,7 +63,6 @@ public class CandidatesRest {
 	
 	@POST
 	@Path("/addcandidate")
-	@Produces(MediaType.APPLICATION_JSON)
 	public void addCandidate(@FormParam("ehdokas_id")String ehdokas_id, @FormParam("sukunimi")String sukunimi, @FormParam("etunimi")String etunimi, 
 			@FormParam("puolue")String puolue, @FormParam("kotipaikkakunta")String kotipaikkakunta, @FormParam("ika")String ika,
 			@FormParam("miksi_eduskuntaan")String miksi_eduskuntaan, @FormParam("mita_asioita_haluat_edistaa")String mita_asioita_haluat_edistaa,
@@ -81,7 +80,7 @@ public class CandidatesRest {
 		Dao dao = new Dao();
 		String list = dao.addCandidate(c);		
 		request.setAttribute("candidateslist", list);
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/candidatepicker.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/addcandidate.jsp");
 		try {
 			rd.forward(request, response);
 		} catch (ServletException | IOException e) {
@@ -102,7 +101,7 @@ public class CandidatesRest {
 				ammatti);
 		list = dao.editCandidates(c);
 		request.setAttribute("candidateslist", list);
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/candidatepicker.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/editcandidate.jsp");
 		try {
 			rd.forward(request, response);
 		} catch (ServletException | IOException e) {
@@ -133,7 +132,7 @@ public class CandidatesRest {
 		Dao dao = new Dao();
 		list = dao.getCandidateId(id);
 		request.setAttribute("candidateslist", list);
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/candidatepicker.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/editcandidate.jsp");
 		try {
 			rd.forward(request, response);
 		} catch (ServletException | IOException e) {
