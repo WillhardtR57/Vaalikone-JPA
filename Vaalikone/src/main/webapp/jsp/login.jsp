@@ -7,7 +7,7 @@
 
 <h2>Log IN! XD</h2>
 
-<form action="/rest/loginrest" method="POST">
+<form action="/rest/loginrest/login" method="POST">
 <label>Username:</label> <br>
 <input type="text" placeholder="Input username" name="username"> <br>
 <label>Password:</label> <br>

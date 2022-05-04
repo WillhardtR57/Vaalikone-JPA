@@ -5,7 +5,8 @@
 	
 	<persistence-unit name="vaalikone-jpa">
 	<class>data.Candidates</class>
-		
+	<class>data.UserData</class>
+	<class>data.LoginData</class>
 <!-- If using MySQL 5.7 -->
 <!--  
 	as a root user give a command
