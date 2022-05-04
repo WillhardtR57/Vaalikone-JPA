@@ -11,7 +11,6 @@ public class UserData implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String username;
-
 	private String password;
 	
 	public UserData() {

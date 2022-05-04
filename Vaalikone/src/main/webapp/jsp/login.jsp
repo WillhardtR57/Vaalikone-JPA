@@ -5,7 +5,7 @@
 <c:import url="../navbar.html" charEncoding="UTF-8"/>
 <link rel="stylesheet" href="../styles.css">
 
-<h2>Log IN! XD</h2>
+<h2>Log In!</h2>
 
 <form action="/rest/loginrest" method="POST">
 <label>Username:</label> <br>
@@ -18,14 +18,14 @@
 String userProvidedUsername = (String)request.getAttribute("userProvidedUsername");
 String username = (String)request.getAttribute("username");
 String password = (String)request.getAttribute("password");
+String MD5Password = (String)request.getAttribute("MD5Password");
 %>
 <%
-if(data.LoginData.CheckPasswords(username, password)==true && userProvidedUsername.equals(username)){
+if(data.LoginData.CheckPasswords(MD5Password, password)==true && userProvidedUsername.equals(username)){
 	response.sendRedirect("/jsp/adminpage.jsp");
-} else if(password==null || userProvidedUsername==null){
-	
+} else if (data.LoginData.CheckPasswords(MD5Password, password)==false || userProvidedUsername!=username){
 %>
-<div id="loginFailure">Username or password is incorrect! XD</div>
+<div id="loginFailure">Username or password is incorrect!</div>
 <%
 }
 %>

@@ -53,17 +53,21 @@ public class LoginRest {
 			   System.out.println(adminUsername + ", " + adminPassword);
 		
 	         }
+		
+		try {
+			MD5Password = data.LoginData.crypt(adminPassword);
+			password = data.LoginData.crypt(password);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+		
 	
 		request.setAttribute("userProvidedUsername", username);
 		request.setAttribute("password", password); 
 		request.setAttribute("username", adminUsername);
+		request.setAttribute("MD5Password", MD5Password);
 	    RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
 		dispatcher.forward(request, response); 
 	}
-	
-	
-	
-	
-	
 	
 }
