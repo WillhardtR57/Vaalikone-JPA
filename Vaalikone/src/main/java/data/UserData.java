@@ -3,8 +3,7 @@ package data;
 import java.io.Serializable;
 import javax.persistence.*;
 
-@Entity
-@NamedQuery(name="Admin.findAll", query="SELECT a FROM Admin a")
+@Entity(name = "admin")
 public class UserData implements Serializable {
 	private static final long serialVersionUID = 1L;
 

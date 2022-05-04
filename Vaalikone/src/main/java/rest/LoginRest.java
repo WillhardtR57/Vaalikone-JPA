@@ -43,7 +43,7 @@ public class LoginRest {
 		EntityManagerFactory emf=Persistence.createEntityManagerFactory("vaalikone-jpa");
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		List<UserData> list=em.createQuery("SELECT a FROM Admin a").getResultList();
+		List<UserData> list=em.createQuery("SELECT a FROM admin a").getResultList();
 		em.getTransaction().commit();
 		
 		
