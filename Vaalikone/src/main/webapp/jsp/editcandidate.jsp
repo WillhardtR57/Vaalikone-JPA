@@ -19,32 +19,31 @@
 
 <form action='/rest/candidatesrest/editcandidates' method='post' accept-charset="UTF-8">
 
-<b>Candidate number</b>
-<input type="text" name='ehdokas_id' value='${requestScope.candidate.ehdokas_id}'> <br>
+<input type="hidden" name='ehdokas_id' value='${requestScope.candidateslist.ehdokas_id}'> <br>
 
 <b>Last name</b> <br>
-<input type="text" name='sukunimi' value='${requestScope.candidate.sukunimi}'> <br>
+<input type="text" name='sukunimi' value='${requestScope.candidateslist.sukunimi}'> <br>
 
 <b>First name</b> <br>
-<input type="text" name='etunimi' value='${requestScope.candidate.etunimi}'> <br>
+<input type="text" name='etunimi' value='${requestScope.candidateslist.etunimi}'> <br>
 
 <b>Party</b> <br>
-<input type="text" name='puolue' value='${requestScope.candidate.puolue}'> <br>
+<input type="text" name='puolue' value='${requestScope.candidateslist.puolue}'> <br>
 
 <b>Home</b> <br>
-<input type="text" name='kotipaikkakunta' value='${requestScope.candidate.kotipaikkakunta}'> <br>
+<input type="text" name='kotipaikkakunta' value='${requestScope.candidateslist.kotipaikkakunta}'> <br>
 
 <b>Age</b> <br>
-<input type="text" name='ika' value='${requestScope.candidate.ika}'> <br>
+<input type="text" name='ika' value='${requestScope.candidateslist.ika}'> <br>
 
 <b>Why do you want to enter parliament?</b><br>
-<textarea rows="5" cols="80" name='miksi_eduskuntaan' style="width:24rem;">${requestScope.candidate.miksi_eduskuntaan}</textarea><br>
+<textarea rows="5" cols="80" name='miksi_eduskuntaan' style="width:24rem;">${requestScope.candidateslist.miksi_eduskuntaan}</textarea><br>
 
 <b>What things you want to represent?</b> <br>
-<textarea rows="5" cols="80" name='mita_asioita_haluat_edistaa' style="width:24rem;">${requestScope.candidate.mita_asioita_haluat_edistaa}</textarea><br>
+<textarea rows="5" cols="80" name='mita_asioita_haluat_edistaa' style="width:24rem;">${requestScope.candidateslist.mita_asioita_haluat_edistaa}</textarea><br>
 
 <b>Profession</b> <br>
-<input type="text" name='ammatti' value='${requestScope.candidate.ammatti}'> <br> 
+<input type="text" name='ammatti' value='${requestScope.candidateslist.ammatti}'> <br> 
 
 <input type='Submit' name='ok' value='Save'> 
 </form>

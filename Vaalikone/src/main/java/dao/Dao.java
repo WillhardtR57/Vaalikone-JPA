@@ -38,7 +38,7 @@ public class Dao {
 		em.getTransaction().commit();
 		List<Candidates> list = readCandidates();
 		em.close();
-		return null;
+		return list;
 	}
 	
 	public String deleteCandidate(int id) {
@@ -48,6 +48,7 @@ public class Dao {
 		Object candidate = em.createQuery("select c from ehdokkaat c where c.ehdokas_id=?1").setParameter(1, id).getSingleResult();
 		em.remove(candidate);
 		em.getTransaction().commit();
+		em.close();
 		return null;
 	}
 	

@@ -3,7 +3,7 @@
  
  <%@ page import="java.util.ArrayList" %>   
  <%@ page import="data.*" %> 
- <%@ page import="dao.Dao" %>   
+ <%@ page import="dao.Dao" %>  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <link rel=stylesheet type="text/css" href="/css/styles.css"></link>
 <!DOCTYPE html>
@@ -17,11 +17,7 @@
 
 <h1>Add candidate</h1>
 
-<br>
-<form action='/rest/candidatesrest/addcandidate' method='post'>
-
-<b>Candidate number</b>
-<input type="text" name='ehdokas_id'>
+<form method='post' action='/rest/candidatesrest/addcandidate' accept-charset="UTF-8">
 
 <b>Last name</b> <br>
 <input type="text" name='sukunimi' value=''> <br>

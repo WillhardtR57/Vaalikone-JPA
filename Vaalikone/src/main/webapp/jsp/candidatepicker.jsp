@@ -19,9 +19,9 @@
 
 <c:forEach var="candidate" items="${requestScope.candidateslist}" >
 
-<b>${candidate.ehdokas_id}:</b> ${candidate.etunimi}, ${candidate.sukunimi} 
+${candidate.etunimi}, ${candidate.sukunimi} 
 <a href="/rest/candidatesrest/getcandidateid/${candidate.ehdokas_id}">Edit</a> 
-<a href="/rest/candidaterest/deletecandidate/${candidate.ehdokas_id}">Delete</a> <br><br>
+<a href="/rest/candidatesrest/deletecandidate/${candidate.ehdokas_id}">Delete</a> <br><br>
 
 </c:forEach>
 

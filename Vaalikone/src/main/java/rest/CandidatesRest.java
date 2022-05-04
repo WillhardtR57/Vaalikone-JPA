@@ -13,6 +13,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -63,12 +64,12 @@ public class CandidatesRest {
 	
 	@POST
 	@Path("/addcandidate")
-	public void addCandidate(@FormParam("ehdokas_id")String ehdokas_id, @FormParam("sukunimi")String sukunimi, @FormParam("etunimi")String etunimi, 
+	@Produces(MediaType.APPLICATION_JSON)
+	public void addCandidate(@FormParam("sukunimi")String sukunimi, @FormParam("etunimi")String etunimi, 
 			@FormParam("puolue")String puolue, @FormParam("kotipaikkakunta")String kotipaikkakunta, @FormParam("ika")String ika,
 			@FormParam("miksi_eduskuntaan")String miksi_eduskuntaan, @FormParam("mita_asioita_haluat_edistaa")String mita_asioita_haluat_edistaa,
 			@FormParam("ammatti")String ammatti) {
 		Candidates c = new Candidates();
-		c.setEhdokas_id(ehdokas_id);
 		c.setSukunimi(sukunimi);
 		c.setEtunimi(etunimi);
 		c.setPuolue(puolue);
@@ -80,7 +81,7 @@ public class CandidatesRest {
 		Dao dao = new Dao();
 		String list = dao.addCandidate(c);		
 		request.setAttribute("candidateslist", list);
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/addcandidate.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/index.html");
 		try {
 			rd.forward(request, response);
 		} catch (ServletException | IOException e) {
@@ -91,8 +92,8 @@ public class CandidatesRest {
 	@POST
 	@Path("/editcandidates")
 	@Produces(MediaType.APPLICATION_JSON)
-	public void editCandidates(@FormParam("ehdokas_id")int ehdokas_id, @FormParam("sukunimi")String sukunimi, @FormParam("etunimi")String etunimi, 
-			@FormParam("puolue")String puolue, @FormParam("kotipaikkakunta")String kotipaikkakunta, @FormParam("ika")int ika,
+	public void editCandidates(@FormParam("ehdokas_id")String ehdokas_id, @FormParam("sukunimi")String sukunimi, @FormParam("etunimi")String etunimi, 
+			@FormParam("puolue")String puolue, @FormParam("kotipaikkakunta")String kotipaikkakunta, @FormParam("ika")String ika,
 			@FormParam("miksi_eduskuntaan")String miksi_eduskuntaan, @FormParam("mita_asioita_haluat_edistaa")String mita_asioita_haluat_edistaa,
 			@FormParam("ammatti")String ammatti) {
 		List<Candidates> list = new ArrayList<Candidates>();
@@ -101,7 +102,7 @@ public class CandidatesRest {
 				ammatti);
 		list = dao.editCandidates(c);
 		request.setAttribute("candidateslist", list);
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/editcandidate.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/candidatepicker.jsp");
 		try {
 			rd.forward(request, response);
 		} catch (ServletException | IOException e) {
@@ -116,7 +117,7 @@ public class CandidatesRest {
 		Dao dao = new Dao();
 		String list = dao.deleteCandidate(id);
 		request.setAttribute("candidateslist", list);
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/candidatepicker.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/rest/candidatesrest/candidatepicker");
 		try {
 			rd.forward(request, response);
 		} catch (ServletException | IOException e) {
