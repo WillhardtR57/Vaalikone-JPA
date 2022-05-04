@@ -9,15 +9,7 @@
 <title>Vaalikone - Admin Page</title>
 </head>
 <body>
-<div>
-<ul>
-  <h1>Vaalikone</h1>
-  <li><a href="../jsp/adminpage.jsp">Admin Home</a></li>
-  <li><a href="/rest/candidatesrest/addcandidate">Add Candidate</a></li>
-  <li><a href="/rest/candidatesrest/candidatepicker">Edit Candidates</a></li>
-  <li><a href="/logout">Logout</a></li>
-</ul>
-</div>
+
     <div style="text-align: center">
         <h1>Welcome to Vaalikone Admin Page :-D!!!</h1>
         <b>Hello </b><b>${user.username}</b>

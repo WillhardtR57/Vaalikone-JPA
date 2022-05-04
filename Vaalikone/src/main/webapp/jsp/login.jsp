@@ -20,7 +20,7 @@ String username = (String)request.getAttribute("username");
 String password = (String)request.getAttribute("password");
 %>
 <%
-if(data.LoginData.CheckPasswords(password)==true && userProvidedUsername.equals(username)){
+if(data.LoginData.CheckPasswords(username, password)==true && userProvidedUsername.equals(username)){
 	response.sendRedirect("/jsp/adminpage.jsp");
 } else if(password==null || userProvidedUsername==null){
 	
@@ -29,6 +29,4 @@ if(data.LoginData.CheckPasswords(password)==true && userProvidedUsername.equals(
 <%
 }
 %>
-
-</body>
-</html>
+<%@include file="../footer.html" %>

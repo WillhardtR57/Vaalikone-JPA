@@ -40,7 +40,7 @@ public class LoginRest {
 	@Path("/login")
 	@Consumes("application/x-www-form-urlencoded")
 	public void login(@FormParam("username") String username, @FormParam("password") String password) throws ServletException, IOException{
-		EntityManagerFactory emf=Persistence.createEntityManagerFactory("Server-programming-jpa");
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("vaalikone-jpa");
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
 		List<UserData> list=em.createQuery("SELECT a FROM Admin a").getResultList();
