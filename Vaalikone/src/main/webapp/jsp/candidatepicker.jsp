@@ -14,7 +14,7 @@
 <title>Vaalikone - Edit Candidates</title>
 </head>
 <body>
-<c:import url="../navbar.html" charEncoding="UTF-8"/>
+<c:import url="../navbaradmin.html" charEncoding="UTF-8"/>
 <h1>You can edit or delete candidates</h1>
 
 <c:forEach var="candidate" items="${requestScope.candidateslist}" >

@@ -3,15 +3,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
  
 <c:import url="../navbar.html" charEncoding="UTF-8"/>
-<link rel="stylesheet" href="../styles.css">
+<link rel=stylesheet type="text/css" href="/css/styles.css"></link>
 
-<h2>Log In!</h2>
+<h2>Login</h2>
 
 <form action="/rest/loginrest/login" method="POST">
 <label>Username:</label> <br>
-<input type="text" placeholder="Input username" name="username"> <br>
+<input type="text" placeholder="username" name="username"> <br>
 <label>Password:</label> <br>
-<input type="password" placeholder="Input password" name="password"> <br>
+<input type="password" placeholder="password" name="password"> <br>
 <button type="submit">Submit</button>
 </form>
 <%
@@ -24,9 +24,6 @@ String MD5Password = (String)request.getAttribute("MD5Password");
 if(data.LoginData.CheckPasswords(MD5Password, password)==true && userProvidedUsername.equals(username)){
 	response.sendRedirect("/jsp/adminpage.jsp");
 } else if (data.LoginData.CheckPasswords(MD5Password, password)==false || userProvidedUsername!=username){
-%>
-<div id="loginFailure">Username or password is incorrect!</div>
-<%
 }
 %>
-<%@include file="../footer.html" %>
+<p>Authors: Tuukka Kotilainen & Willhardt Räsänen</p>

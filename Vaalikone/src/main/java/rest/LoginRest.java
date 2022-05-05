@@ -24,7 +24,6 @@ import data.UserData;
 public class LoginRest {
 	@Context HttpServletRequest request;
 	@Context HttpServletResponse response;
-
 	String adminUsername;
 	String adminPassword;
 	String MD5Password;
@@ -32,8 +31,8 @@ public class LoginRest {
 	@GET
 	@Path("/loginpage")
 	public void goToLoginPage() throws ServletException, IOException {
-		 RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
-		 dispatcher.forward(request, response); 
+		 RequestDispatcher rd = request.getRequestDispatcher("/jsp/login.jsp");
+		 rd.forward(request, response); 
 	}
 	
 	@POST
@@ -44,30 +43,24 @@ public class LoginRest {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
 		List<UserData> list=em.createQuery("SELECT a FROM admin a").getResultList();
-		em.getTransaction().commit();
-		
-		
+		em.getTransaction().commit();		
 		for (UserData admin : list) {
 			   adminUsername = admin.getUsername();
 			   adminPassword = admin.getPassword();
 			   System.out.println(adminUsername + ", " + adminPassword);
-		
-	         }
-		
+	         }		
 		try {
 			MD5Password = data.LoginData.crypt(adminPassword);
 			password = data.LoginData.crypt(password);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
-		}
-		
-	
+		}		
 		request.setAttribute("userProvidedUsername", username);
 		request.setAttribute("password", password); 
 		request.setAttribute("username", adminUsername);
 		request.setAttribute("MD5Password", MD5Password);
-	    RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
-		dispatcher.forward(request, response); 
+	    RequestDispatcher rd = request.getRequestDispatcher("/jsp/login.jsp");
+		rd.forward(request, response); 
 	}
 	
 }

@@ -1,9 +1,9 @@
 body {
 font: 100% system-ui;
-color: white;
-background-color: #1a1b1c;
+color: #361507;
+background-color: #edaf7b;
 text-align: center;
 }
 a {
-color: #005eff;
+color: rgb(0, 0, 0);
 }

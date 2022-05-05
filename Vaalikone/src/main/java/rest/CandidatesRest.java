@@ -75,13 +75,13 @@ public class CandidatesRest {
 		c.setPuolue(puolue);
 		c.setKotipaikkakunta(kotipaikkakunta);
 		c.setIka(ika);
-		c.setMiksiEduskuntaan(miksi_eduskuntaan);
-		c.setMitaAsioitaHaluatEdistaa(mita_asioita_haluat_edistaa);
+		c.setMiksi_eduskuntaan(miksi_eduskuntaan);
+		c.setMita_asioita_haluat_edistaa(mita_asioita_haluat_edistaa);
 		c.setAmmatti(ammatti);
 		Dao dao = new Dao();
 		String list = dao.addCandidate(c);		
 		request.setAttribute("candidateslist", list);
-		RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/adminpage.jsp");
 		try {
 			rd.forward(request, response);
 		} catch (ServletException | IOException e) {

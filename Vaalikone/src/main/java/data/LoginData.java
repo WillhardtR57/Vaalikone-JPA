@@ -24,7 +24,6 @@ public class LoginData {
   	      if (str == null || str.length() == 0) {
   	          throw new IllegalArgumentException("String to encrypt cannot be null or zero length");
   	      }
-
   	      MessageDigest digester;
   	      try {
   	          digester = MessageDigest.getInstance("MD5");

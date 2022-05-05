@@ -110,14 +110,14 @@ public class Candidates {
 	public String getMiksi_eduskuntaan() {
 		return miksi_eduskuntaan;
 	}
-	public void setMiksiEduskuntaan(String miksi_eduskuntaan) {
+	public void setMiksi_eduskuntaan(String miksi_eduskuntaan) {
 		this.miksi_eduskuntaan = miksi_eduskuntaan;
 	}
 	
 	public String getMita_asioita_haluat_edistaa() {
 		return mita_asioita_haluat_edistaa;
 	}
-	public void setMitaAsioitaHaluatEdistaa(String mitaAsioitaHaluatEdistaa) {
+	public void setMita_asioita_haluat_edistaa(String mita_asioita_haluat_edistaa) {
 		this.mita_asioita_haluat_edistaa = mita_asioita_haluat_edistaa;
 	}
 	
